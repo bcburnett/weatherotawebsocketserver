@@ -14,6 +14,12 @@
 // define functions
 String getJson(bool b);
 void parseCommand(String command);
+void notifyClients();
+void notifyInitialClients(const String msg);
+void handleWebSocketMessage(void *arg, uint8_t *data, size_t len);
+void initWebSocket();
+void initWebServer();
+void updateDB();
 
 // web server variables
 AsyncWebServer server(80);
