@@ -1,4 +1,4 @@
-# ESP32 Async web server / websocket framework example.
+# ESP32 Async web server / websocket weather station.
 
  - connects to wifi
  - retrieves time from ntp servers
@@ -16,7 +16,7 @@
  - bcbsdcard.h
  - bcbbmx.h
 
-## slider-demo2.ino
+## weatherotawebsocketserver03182021.ino
 
 ### internal rtc variables
 	const char *ntpServer = "pool.ntp.org";
@@ -59,17 +59,17 @@
 	  float humidity;
 	  float pressure;
 	  double pressure64;
-	  float temp;
-	  float dew () {
-	    return  temp - ((100 - humidity) / 5.);
-	  }
-	  String filename;
+	  float temp;	  String filename;
 	  bool reload;
 	  String json;
 	  bool ota;
+	  float dew () {
+	    return  temp - ((100 - humidity) / 5.);
+	  }
+
 	};
 
-	State state = {0.00, 0.00, 0.00, 0.00,"",false,"",false};
+	State state = {0.00, 0.00, 0.00, 0.00,false,"",false};
 
 
 	// web server variables
@@ -109,7 +109,7 @@
 	xSemaphoreHandle semFile = xSemaphoreCreateMutex(); // file 
 	operation lock
 
-	#define FORMAT_SPIFFS_IF_FAILED true
+
 
 
 ### functions
