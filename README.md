@@ -1,5 +1,8 @@
 # ESP32 Async web server / websocket weather station.
 
+	bmx280 connected to pins 21 and 22
+	sd card reader/writer on pins 5,18,19,and 23
+
  - Sends weather data to a mysql database every minute.
  - updates the clients every 30 seconds.
  - reads the sensors every 30 seconds.
