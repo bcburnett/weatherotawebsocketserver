@@ -1,5 +1,8 @@
 # ESP32 Async web server / websocket weather station.
 
+ - Sends weather data to a mysql database every minute.
+ - updates the clients every 30 seconds.
+ - reads the sensors every 30 seconds.
  - connects to wifi
  - retrieves time from ntp servers
  - if index.htm is not present on the SD card, it loads a default webpage to the card.
@@ -7,6 +10,16 @@
  - a new index.htm can be uploaded from the client interface, and once uploaded, all the clients will refresh to the new page.
  - programming can be updated using the arduino OTA interface.
  - it will maintain state between reboots.
+ 
+	Database Table
+	`idweather` = <{idweather: }>,
+	`date` = <{date: }>,
+	`temp` = <{temp: }>,
+	`press` = <{press: }>,
+	`p64` = <{p64: }>,
+	`humid` = <{humid: }>
+
+
 
 # Files
 
